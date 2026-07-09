@@ -6,7 +6,8 @@ def copy_file(command: str) -> None:
 
     if cmd == "cp" and current_file != new_file:
         try:
-            with open(current_file, "r") as source, open(new_file, "w") as target:
+            with (open(current_file, "r") as source,
+                  open(new_file, "w") as target):
                 target.write(source.read())
         except FileNotFoundError:
             return
